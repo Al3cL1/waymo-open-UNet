@@ -54,7 +54,7 @@ if [ -n "$file_list" ]; then
             for data_type in $data_types; do
                 data_type_name=$(basename "$data_type")
                 full_path="${data_type}${file}"
-                data_type_folder="${destination_folder}/${data_type_name}"
+                data_type_folder="${destination_folder}/${data_set}/${data_type_name}"
                 create_directory "$data_type_folder"
                 $gsutil_cmd "$full_path" "$data_type_folder/"
             done
