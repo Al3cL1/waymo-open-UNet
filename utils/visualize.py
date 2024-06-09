@@ -1,4 +1,3 @@
-import tensorflow as tf
 import numpy as np
 import dask.dataframe as dd
 from waymo_open_dataset import v2
@@ -10,7 +9,7 @@ import conversions
 
 def read(tag: str, dataset_dir: str, context_name: str) -> dd.DataFrame:
     """Creates a Dask DataFrame for the component specified by its tag."""
-    paths = tf.io.gfile.glob(f'{dataset_dir}/{tag}/{context_name}.parquet')
+    paths = f'{dataset_dir}/{tag}/{context_name}.parquet'
     return dd.read_parquet(paths)
 
 
